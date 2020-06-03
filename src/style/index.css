@@ -176,6 +176,14 @@
     background: url("../assets/tree_2.png");
 }
 
+.hpl-menu .hplmi-row.icon-timeaxis:before {
+    background: url("../assets/timeaxis_1.png");
+}
+
+.hpl-menu .hplmi-row.icon-timeaxis.active:before {
+    background: url("../assets/timeaxis_2.png");
+}
+
 .home-page .hp-right {
     top: 80px;
     left: 240px;

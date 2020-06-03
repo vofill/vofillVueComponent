@@ -1,8 +1,12 @@
 <template>
     <div>
         <h1>{{ msg }}</h1>
-        <div class="time-axis1">
-        </div>
+        <vofill-scroll :height="scrollHeight">
+            <div class="time-axis1">
+                <div class="ta-title">时间轴组件一</div>
+                <vofill-time-axis :type=1 :list="dataList"></vofill-time-axis>
+            </div>
+        </vofill-scroll>
     </div>
 </template>
 
@@ -19,7 +23,10 @@
         data () {
             return {
                 msg: 'Welcome to Your 时间轴组件页',
-                scrollHeight: "780px"
+                scrollHeight: "780px",
+                dataList: [{Id: 1, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03"}, {Id: 2, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03"},
+                            {Id: 3, Title: "这是一个标题", Content: "这是具体内容这是具体内容", Date: "2020-06-03"}, {Id: 4, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03"},
+                            {Id: 5, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03"}]
             }
         },
         created() {
@@ -33,8 +40,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .table-box {
-        width: 800px;
-        height: 700px;
+    .time-axis1 .ta-title {
+        width: 100%;
+        height: 80px;
+        font-size: 20px;
+        line-height: 80px;
+        padding-left: 200px;
+        color: var(--font-color);
     }
 </style>
