@@ -1,0 +1,72 @@
+body {
+    height: 100%;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,ol, li, ul{margin:0;padding:0;}
+
+body{font-family: "微软雅黑","Arial","Microsoft YaHei",'Avenir', Helvetica, Arial, sans-serif;font-size: 16px;}
+   
+ol,li,ul{list-style: none;}
+
+a{cursor:pointer;text-decoration: none;	color: unset;}
+
+input , textarea{outline:none;vertical-align: top;background: transparent;padding: 0 16px;font-size: 16px;border-radius: 5px;font-family: "微软雅黑";}
+
+input::-ms-clear, ::-ms-reveal{	display: none;}
+
+textarea{resize: none;}
+
+table{border-collapse: collapse;font-size: 16px;padding:0;margin:0;width: 100%;}
+
+table td , table th{padding:0;}
+
+img{border: none;}
+
+svg{height: 100%;width: 100%;}
+
+i {font-style: normal;}
+
+*{box-sizing: border-box;}
+
+*:focus{outline: none;}
+
+:root{
+    --scroll-bar: #ccc;
+    --border-color: #ced3da;
+    --input-border-color: #ced3da;
+    --input-border:solid 1px var(--input-border-color);
+    --input-active-color: #3981e3;
+    --input-color:#485778;
+    --font-color:#485778;
+    --placeholder-color:#bfc4ce;
+    --input-height: 40px;
+    --input-line-height:38px;
+    --textarea-height: 120px;
+    --select-bg: #fff;
+    --select-color :#3981e3;
+    --select-hover-color: #ebf2fc;
+    --row-key-color: #8691a3;
+    --thead-bg:#f7f8f9;
+    --thead-border: solid 1px #eff0f2;
+    --tbody-border: solid 1px #eff0f2;
+    --tfoot-border: solid 1px #eff0f2;
+    --tfoot-size-bg: #fff;
+    --tfoot-size-active-bg: #3981e3;
+    --tfoot-size-border: solid 1px var(--input-border-color);
+    --white: #ffffff;
+    --blue: #3981e3;
+    --yellow: #ffba2a;
+    --green: #88c132;
+    --green2: #4aa55d;
+    --orange: #ff6d4b;
+    --red: #d2322d;
+    --grey: #ced3da;
+    --popup-bg: #fff;
+    --popup-color: #5e6c84;
+    --alert-color: #ff6d4b;
+    --clock-hover: #dddddd;
+    --slider-bg: #eeeeee;
+}

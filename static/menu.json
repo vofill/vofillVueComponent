@@ -1,0 +1,596 @@
+[
+    {
+        "Id":"01",
+		"PId":"0",
+        "Name":"首页",
+        "Icon":"workbench",
+        "Src":"desktop.html",
+        "Operate": [
+            {
+                "Key": "010001",
+                "Value": "查看"
+            }
+        ]
+    },
+    {
+        "Id":"02",
+		"PId":"0",
+        "Name":"通用组件",
+        "Icon":"system",
+        "Operate": [
+            {
+                "Key": "020001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0201",
+				"PId":"02",
+                "Name":"子菜单一",
+                "Src":"organ.html",
+                "Operate": [
+                    {
+                        "Key": "020101",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "020102",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "020103",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "020104",
+                        "Value": "删除"
+                    },
+                    {
+                        "Key": "020105",
+                        "Value": "赋权"
+                    },
+                    {
+                        "Key": "020114",
+                        "Value": "调序"
+                    }
+                ]
+            },
+            {
+                "Id":"0202",
+				"PId":"02",
+                "Name":"子菜单二",
+                "Src":"jobAuthority.html",
+                "Operate": [
+                    {
+                        "Key": "020201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "020202",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "020203",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "020204",
+                        "Value": "删除"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id":"03",
+		"PId":"0",
+        "Name":"table组件",
+        "Icon":"project",
+        "Operate": [
+            {
+                "Key": "030001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0301",
+				"PId":"03",
+                "Name":"子菜单一",
+                "class":"mbtn-add",
+                "Src":"add.html",
+                "Operate": [
+                    {
+                        "Key": "030101",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0302",
+				"PId":"03",
+                "Name":"子菜单二",
+                "Src":"manage.html",
+                "Operate": [
+                    {
+                        "Key": "030201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "030206",
+                        "Value": "停复工"
+                    }
+                ]
+            },
+            {
+                "Id":"0303",
+				"PId":"03",
+                "Name":"子菜单三",
+                "Src":"baseset.html",
+                "Operate": [
+                    {
+                        "Key": "030301",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "030302",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "030303",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "030304",
+                        "Value": "删除"
+                    }
+                ]
+            },
+            {
+                "Id":"0304",
+				"PId":"03",
+                "Name":"子菜单四",
+                "Src":"prouser.html",
+                "Operate": [
+                    {
+                        "Key": "030401",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0305",
+				"PId":"03",
+                "Name":"子菜单五",
+                "Src":"chart.html",
+                "Operate":[
+                    {
+                        "Key":"030501",
+                        "Value":"查看"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id":"04",
+		"PId":"0",
+        "Name":"滑块组件",
+        "Icon":"contract",
+		"Src":"list.html",
+        "Operate": [
+            {
+                "Key": "040001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0401",
+				"PId":"04",
+                "Name":"子菜单一",
+                "class":"mbtn-add",
+                "Src":"add.html",
+                "Operate": [
+                    {
+                        "Key": "040101",
+                        "Value": "查看"
+                    }
+                ],
+				"Child": [
+					{
+						"Id":"040101",
+						"PId":"0401",
+						"Name":"次子菜单一",
+						"Src":"list.html",
+						"Operate": [
+							{
+								"Key": "040201",
+								"Value": "查看"
+							},
+							{
+								"Key": "040204",
+								"Value": "删除"
+							},
+							{
+								"Key": "040207",
+								"Value": "作废"
+							}
+						]
+					}
+				]
+            },
+            {
+                "Id":"0402",
+				"PId":"04",
+                "Name":"子菜单二",
+                "Src":"list.html",
+                "Operate": [
+                    {
+                        "Key": "040201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "040204",
+                        "Value": "删除"
+                    },
+                    {
+                        "Key": "040207",
+                        "Value": "作废"
+                    }
+                ]
+            },
+            {
+                "Id":"0403",
+				"PId":"04",
+                "Name":"子菜单三",
+                "Operate": [
+                    {
+                        "Key": "040301",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0404",
+				"PId":"04",
+                "Name":"子菜单四",
+                "Src":"cdtSet.html",
+                "Operate": [
+                    {
+                        "Key": "040401",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "040402",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "040403",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "040404",
+                        "Value": "删除"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id":"05",
+		"PId":"0",
+        "Name":"进度条组件",
+        "Icon":"contract",
+		"Src":"list.html",
+        "Operate": [
+            {
+                "Key": "050001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0501",
+				"PId":"05",
+                "Name":"子菜单一",
+                "class":"mbtn-add",
+                "Src":"add.html",
+                "Operate": [
+                    {
+                        "Key": "050101",
+                        "Value": "查看"
+                    }
+                ],
+				"Child": [
+					{
+						"Id":"050101",
+						"PId":"0501",
+						"Name":"次子菜单一",
+						"Src":"list.html",
+						"Operate": [
+							{
+								"Key": "050201",
+								"Value": "查看"
+							},
+							{
+								"Key": "050204",
+								"Value": "删除"
+							},
+							{
+								"Key": "050207",
+								"Value": "作废"
+							}
+						]
+					}
+				]
+            },
+            {
+                "Id":"0502",
+				"PId":"05",
+                "Name":"子菜单二",
+                "Src":"list.html",
+                "Operate": [
+                    {
+                        "Key": "050201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "050204",
+                        "Value": "删除"
+                    },
+                    {
+                        "Key": "050207",
+                        "Value": "作废"
+                    }
+                ]
+            },
+            {
+                "Id":"0503",
+				"PId":"05",
+                "Name":"子菜单三",
+                "Operate": [
+                    {
+                        "Key": "050301",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0504",
+				"PId":"05",
+                "Name":"子菜单四",
+                "Src":"cdtSet.html",
+                "Operate": [
+                    {
+                        "Key": "050401",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "050402",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "050403",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "050404",
+                        "Value": "删除"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id":"06",
+		"PId":"0",
+        "Name":"左右选择组件",
+        "Icon":"contract",
+		"Src":"list.html",
+        "Operate": [
+            {
+                "Key": "060001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0601",
+				"PId":"06",
+                "Name":"子菜单一",
+                "class":"mbtn-add",
+                "Src":"add.html",
+                "Operate": [
+                    {
+                        "Key": "060101",
+                        "Value": "查看"
+                    }
+                ],
+				"Child": [
+					{
+						"Id":"060101",
+						"PId":"0601",
+						"Name":"次子菜单一",
+						"Src":"list.html",
+						"Operate": [
+							{
+								"Key": "060201",
+								"Value": "查看"
+							},
+							{
+								"Key": "060204",
+								"Value": "删除"
+							},
+							{
+								"Key": "060207",
+								"Value": "作废"
+							}
+						]
+					}
+				]
+            },
+            {
+                "Id":"0602",
+				"PId":"06",
+                "Name":"子菜单二",
+                "Src":"list.html",
+                "Operate": [
+                    {
+                        "Key": "060201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "060204",
+                        "Value": "删除"
+                    },
+                    {
+                        "Key": "060207",
+                        "Value": "作废"
+                    }
+                ]
+            },
+            {
+                "Id":"0603",
+				"PId":"06",
+                "Name":"子菜单三",
+                "Operate": [
+                    {
+                        "Key": "060301",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0604",
+				"PId":"06",
+                "Name":"子菜单四",
+                "Src":"cdtSet.html",
+                "Operate": [
+                    {
+                        "Key": "060401",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "060402",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "060403",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "060404",
+                        "Value": "删除"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id":"07",
+		"PId":"0",
+        "Name":"树状结构组件",
+        "Icon":"contract",
+		"Src":"list.html",
+        "Operate": [
+            {
+                "Key": "070001",
+                "Value": "查看"
+            }
+        ],
+        "Child":[
+            {
+                "Id":"0701",
+				"PId":"07",
+                "Name":"子菜单一",
+                "class":"mbtn-add",
+                "Src":"add.html",
+                "Operate": [
+                    {
+                        "Key": "070101",
+                        "Value": "查看"
+                    }
+                ],
+				"Child": [
+					{
+						"Id":"070101",
+						"PId":"0701",
+						"Name":"次子菜单一",
+						"Src":"list.html",
+						"Operate": [
+							{
+								"Key": "070201",
+								"Value": "查看"
+							},
+							{
+								"Key": "070204",
+								"Value": "删除"
+							},
+							{
+								"Key": "070207",
+								"Value": "作废"
+							}
+						]
+					}
+				]
+            },
+            {
+                "Id":"0702",
+				"PId":"07",
+                "Name":"子菜单二",
+                "Src":"list.html",
+                "Operate": [
+                    {
+                        "Key": "070201",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "070204",
+                        "Value": "删除"
+                    },
+                    {
+                        "Key": "040207",
+                        "Value": "作废"
+                    }
+                ]
+            },
+            {
+                "Id":"0703",
+				"PId":"07",
+                "Name":"子菜单三",
+                "Operate": [
+                    {
+                        "Key": "070301",
+                        "Value": "查看"
+                    }
+                ]
+            },
+            {
+                "Id":"0704",
+				"PId":"07",
+                "Name":"子菜单四",
+                "Src":"cdtSet.html",
+                "Operate": [
+                    {
+                        "Key": "070401",
+                        "Value": "查看"
+                    },
+                    {
+                        "Key": "070402",
+                        "Value": "新增"
+                    },
+                    {
+                        "Key": "070403",
+                        "Value": "编辑"
+                    },
+                    {
+                        "Key": "070404",
+                        "Value": "删除"
+                    }
+                ]
+            }
+        ]
+    }
+]

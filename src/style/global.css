@@ -1,0 +1,337 @@
+/*选择框样式----begin*/
+div.d-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: relative;
+    line-height: unset;
+    display: inline-block;
+}
+
+div.d-checkbox:before {
+    top: 0px;
+    left: 0px;
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    border: 2px solid var(--border-color);
+}
+
+div.d-checkbox:hover:before,
+div.d-checkbox.checked:before {
+    border: 2px solid var(--blue);
+}
+
+div.d-checkbox.checked:after {
+    top: -2px;
+    left: 2px;
+    content: "\2714";
+    color: var(--blue);
+    position: absolute;
+}
+
+div.d-checkbox.checked2:after {
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    content: "";
+    position: absolute;
+    background: var(--blue);
+}
+/*选择框样式----end*/
+
+/*加载动画、弹出页面、弹出框、图片查看背景样式-----begin*/
+.lbgMask:before,
+.pbgMask:before,
+.tbgMask:before,
+.pibgMask:before {
+    z-index: 98;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.lbgMask:before,
+.tbgMask:before，
+.pibgMask:before {
+    z-index: 198;
+}
+/*加载动画、弹出页面、弹出框，图片查看背景样式-----end*/
+
+/*按钮组件样式-----begin*/
+.button {
+    display: inline-block;
+    color: var(--font-color);
+}
+
+button {
+    width: 120px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 20px;
+    color: var(--font-color);
+    background: var(--white);
+    border: 1px solid var(--border-color);
+}
+
+.button.add button i,
+.button.delete button i,
+.button.update button i,
+.button.edit button i,
+.button.detail button i {
+    top: 1px;
+    width: 20px;
+    height: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.button.delete button i {
+    top: 2px;
+    transform: rotate(45deg);
+}
+
+.button.add button i:before,
+.button.add button i:after,
+.button.delete button i:before,
+.button.delete button i:after {
+    top: 6px;
+    left: 3px;
+    width: 14px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background: var(--white);
+}
+
+.button.add button i:after,
+.button.delete button i:after {
+    top: 0px;
+    left: 9px;
+    width: 2px;
+    height: 14px;
+}
+
+.button.update button i:before,
+.button.edit button i:before,
+.button.detail button i:before {
+    top: 0px;
+    left: 3px;
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+}
+
+.button.update button i:before {
+    background: url("../assets/button-update.png");
+}
+
+.button.edit button i:before {
+    background: url("../assets/button-edit.png");
+}
+
+.button.detail button i:before {
+    background: url("../assets/button-detail.png");
+}
+
+.button.blue button {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.button.green button {
+    color: var(--white);
+    background: var(--green);
+}
+
+.button.orange button {
+    color: var(--white);
+    background: var(--orange);
+}
+
+.button.red button {
+    color: var(--white);
+    background: var(--red);
+}
+
+.button button.disabled {
+    background: var(--grey);
+}
+
+button:hover {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.1);
+}
+/*按钮组件样式-----end*/
+
+/*switch组件样式-----begin*/
+.switch {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    display: inline-block;
+    background: var(--blue);
+    transition: .5s ease all;
+}
+
+
+.switch i,
+.switch.switch-8 .s-box:before,
+.switch.switch-9 .s-box:before,
+.switch.switch-10 .s-box:before,
+.switch.switch-11 .s-box:before {
+    width: 40px;
+    height: 40px;
+    color: var(--blue);
+    line-height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    transition: .5s ease all;
+    border: 1px solid var(--blue);
+}
+
+.switch i.s-on {
+    left: 0px;
+}
+
+.switch i.s-off {
+    left: 40px;
+}
+
+.switch .s-box {
+    width: 80px;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.switch.switch-8 .s-box:before,
+.switch.switch-9 .s-box:before {
+    top: 5px;
+    z-index: 1;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 0px solid var(--blue);
+}
+
+.switch.switch-8 .s-box.s-left:before,
+.switch.switch-9 .s-box.s-left:before {
+    left: 5px;
+}
+
+.switch.switch-8 .s-box.s-right:before,
+.switch.switch-9 .s-box.s-right:before {
+    left: 45px;
+}
+
+.switch.switch-3,
+.switch.switch-5,
+.switch.switch-7,
+.switch.switch-9 .s-box.s-right,
+.switch.switch-11 .s-box.s-right {
+    background: var(--red);
+}
+
+.switch.switch-3 i,
+.switch.switch-5 i,
+.switch.switch-7 i {
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.switch.switch-8 .s-i,
+.switch.switch-9 .s-i,
+.switch.switch-10 .s-i,
+.switch.switch-11 .s-i {
+    z-index: 2;
+    color: var(--black);
+    background: transparent;
+    border: 0px solid var(--blue);
+}
+
+.switch.switch-10 .s-i,
+.switch.switch-11 .s-i {
+    color: transparent;
+}
+
+.switch.switch-8 .s-i.active,
+.switch.switch-9 .s-i.active,
+.switch.switch-10 .s-i.active,
+.switch.switch-11 .s-i.active {
+    color: var(--blue);
+}
+
+.switch.switch-9 .s-box.s-right .s-off,
+.switch.switch-11 .s-box.s-right .s-off {
+    color: var(--red);
+}
+
+.switch.switch-10 .s-box:before,
+.switch.switch-11 .s-box:before {
+    top: 1px;
+    left: 39px;
+    z-index: 1;
+    content: "";
+    width: 38px;
+    height: 38px;
+    transition: .8s ease all;
+    transform-origin: 0% 50%;
+    border: 0px solid var(--blue);
+}
+
+.switch.switch-10 .s-box.s-left:before,
+.switch.switch-11 .s-box.s-left:before {
+    transform: rotateY(180deg);
+}
+
+.switch.switch-10 .s-box.s-right:before,
+.switch.switch-11 .s-box.s-right:before {
+    transform: rotateY(0deg);
+}
+/*switch组件样式-----begin*/
+
+/*table组件样式-----begin*/
+.t-head .th-tr,
+.t-body .tb-tr {
+    display: flex;
+    margin: 0 20px;
+    line-height: 50px;
+    background: var(--grey);
+}
+
+.t-body .tb-tr {
+    background: var(--white);
+}
+
+.th-tr span,
+.tb-tr span {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 10px 0px 20px;
+}
+
+.tb-tr span.s-none {
+    text-align: center;
+}
+
+.tb-tr:nth-child(2n){
+    background: var(--thead-bg);
+}
+/*table组件样式-----end*/
