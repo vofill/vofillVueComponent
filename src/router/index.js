@@ -7,6 +7,7 @@ import slider from '@/view/Slider'
 import progressBar from '@/view/ProgressBar'
 import lsSelect from '@/view/LRSelect'
 import tree from '@/view/TreeData'
+import timeaxis from '@/view/TimeAxis'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/tree',
       name: 'Tree',
       component: tree
+    },
+    {
+      path: '/timeaxis',
+      name: 'TimeAxis',
+      component: timeaxis
     }
   ]
 })

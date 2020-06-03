@@ -41,7 +41,7 @@
               menuItems: [{Id: 1, Name: "首页", Url: "Index", Class:"home"}, {Id: 2, Name: "通用组件", Url: "component", Class:"component"},
                           {Id: 3, Name: "table组件", Url: "table", Class:"table"}, {Id: 4, Name: "滑块组件", Url: "slider", Class:"slider"},
                           {Id: 5, Name: "进度条组件", Url: "progressBar", Class:"progress"}, {Id: 6, Name: "左右选择组件", Url: "lrSelect", Class:"lrselect"},
-                          {Id: 7, Name: "树状结构组件", Url: "tree", Class:"tree"}],
+                          {Id: 7, Name: "树状结构组件", Url: "tree", Class:"tree"}, {Id: 8, Name: "时间轴组件", Url: "timeaxis", Class:"timeaxis"}],
               username: "测试人员"
           }
       }
