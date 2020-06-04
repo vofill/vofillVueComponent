@@ -8,6 +8,7 @@ import progressBar from '@/view/ProgressBar'
 import lsSelect from '@/view/LRSelect'
 import tree from '@/view/TreeData'
 import timeaxis from '@/view/TimeAxis'
+import graphicReport from '@/view/GraphicReport'
 
 Vue.use(Router)
 
@@ -55,6 +56,11 @@ export default new Router({
       path: '/timeaxis',
       name: 'TimeAxis',
       component: timeaxis
+    },
+    {
+      path: '/graphicReport',
+      name: 'GraphicReport',
+      component: graphicReport
     }
   ]
 })

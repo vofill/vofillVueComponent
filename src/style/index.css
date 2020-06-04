@@ -184,6 +184,14 @@
     background: url("../assets/timeaxis_2.png");
 }
 
+.hpl-menu .hplmi-row.icon-report:before {
+    background: url("../assets/report_1.png");
+}
+
+.hpl-menu .hplmi-row.icon-report.active:before {
+    background: url("../assets/report_2.png");
+}
+
 .home-page .hp-right {
     top: 80px;
     left: 240px;
