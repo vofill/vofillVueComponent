@@ -28,6 +28,13 @@ var vofill = {
         document.onselectstart =function(){return false;}
         console.log("%c欢迎使用vofill_1.0.js由tianwf发布", this._console.start)
     },
+    getBrowserInfo(domId) {
+        let domObj = document.getElementById(domId);
+        var width = domObj.clientWidth;
+        var height = domObj.clientHeight;
+
+        return {Width: width, Height: height};
+    },
     //小数点保留位数
     changeDecimal(num, val) {
         let fVal = parseFloat(val), times = Math.pow(10, num);

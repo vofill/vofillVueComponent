@@ -1,6 +1,11 @@
 <style>
     @import "../style/reset.css";
 
+    .chart-page {
+        width: 100%;
+        height: 100%;
+    }
+
     .chart-page .chart-row {
         width: 45% !important;
     }
@@ -8,7 +13,7 @@
 </style>
 
 <template>
-    <div class="chart-page">
+    <div class="chart-page" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <vofill-row class="chart-row" name="柱状图："><vofill-graphic-report :type=1></vofill-graphic-report></vofill-row>
@@ -21,6 +26,7 @@
     import vofillRow from '../components/row'
     import vofillScroll from '../components/scroll'
     import vofillGraphicReport from '../components/graphicreport'
+    import vofill from "../js/common/vofill.js";
 
     export default {
         name: 'Table',
@@ -36,6 +42,10 @@
             }
         },
         created() {
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
         },

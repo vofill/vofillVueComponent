@@ -15,12 +15,13 @@
 
     .pie-progress .row.vr-progress {
         width: 18%;
-        margin-left: 28px;
+        flex-wrap: wrap;
+        margin-left: 20px;
     }
 </style>
 
 <template>
-    <div class="progress-bar">
+    <div class="page-body progress-bar" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <vofill-row name="进度条1："><vofill-progress class="blue" :type=1 :sel-val="selValArr[0]" :total-val="totalVal"></vofill-progress></vofill-row>
@@ -44,6 +45,7 @@
     import vofillScroll from '../components/scroll'
     import vofillRow from '../components/row'
     import vofillProgress from '../components/progress'
+    import vofill from "../js/common/vofill.js";
 
     export default {
         name: 'Componet',
@@ -56,9 +58,13 @@
             return {
                 msg: 'Welcome to Your 进度条组件页',
                 totalVal: "100",
-                scrollHeight: "760px",
+                scrollHeight: "",
                 selValArr: ["20", "30", "40", "50", "60", "70", "80"]
             }
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
         },
         watch: {
         }

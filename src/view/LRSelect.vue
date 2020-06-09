@@ -11,7 +11,7 @@
 </style>
 
 <template>
-    <div>
+    <div class="page-body" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <div class="rsl-box">
@@ -38,17 +38,20 @@
         data () {
             return {
                 msg: 'Welcome to Your 左右选择页',
-                scrollHeight: "780px",
+                scrollHeight: "",
                 scrollWidth: "600px",
                 selObj: {SelIds: "4,5,6"}
             }
         },
         created() {
         },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
+        },
         methods: {
         },
         watch: {
-            
         }
     }
 </script>

@@ -194,7 +194,12 @@
             }
         },
         watch: {
-
+            width(nv) {
+                this.scrollHeight = {width: nv, height: this.height, "-moz-user-select": "none"};
+            },
+            height(nv) {
+                this.scrollHeight = {width: this.width, height: nv, "-moz-user-select": "none"};
+            }
         }
     }
 </script>

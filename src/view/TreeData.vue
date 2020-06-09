@@ -7,7 +7,7 @@
 </style>
 
 <template>
-    <div class="tree-page">
+    <div class="page-body tree-page" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <vofill-row name="树状结构1："><vofill-tree :list="treeData" @itemClickToParent="getItemInfo"></vofill-tree></vofill-row>
@@ -41,6 +41,10 @@
         },
         created() {
             this.getTreeData();
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
             getTreeData() {

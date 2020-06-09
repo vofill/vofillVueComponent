@@ -11,10 +11,9 @@
 </style>
 
 <template>
-    <div>
+    <div class="page-body" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
-            
             <div style="width: 100%; height: 60px; font-size: 40px; line-height: 60px; text-align: center;">竖状滑块</div>
             <vofill-row style="height: 300px;">
                 <vofill-slider class="vert-div" :type=4 :sel-val="selValArr[0]" :total-val="totalVal"></vofill-slider>
@@ -45,6 +44,7 @@
     import vofillScroll from '../components/scroll'
     import vofillRow from '../components/row'
     import vofillSlider from '../components/slider'
+    import vofill from "../js/common/vofill.js";
 
     export default {
         name: 'Componet',
@@ -57,9 +57,13 @@
             return {
                 msg: 'Welcome to Your 滑块组件页',
                 totalVal: "100",
-                scrollHeight: "760px",
+                scrollHeight: "",
                 selValArr: ["20", "30", "40", "50", "60"]
             }
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 60) + "px";
         },
         watch: {
         }

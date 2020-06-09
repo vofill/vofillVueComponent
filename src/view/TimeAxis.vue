@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-body" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <div class="time-axis1">
@@ -13,6 +13,7 @@
 <script>
     import vofillTimeAxis from '../components/timeaxis'
     import vofillScroll from '../components/scroll'
+    import vofill from "../js/common/vofill.js";
 
     export default {
         name: 'Table',
@@ -30,6 +31,10 @@
             }
         },
         created() {
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
         },

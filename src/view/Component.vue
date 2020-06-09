@@ -1,6 +1,11 @@
 <style>
     @import "../style/reset.css";
 
+    .comp-page {
+        width: 100%;
+        height: 100%;
+    }
+
     .comp-page .row {
         padding-right: 10px !important;
     }
@@ -24,7 +29,7 @@
 </style>
 
 <template>
-    <div class="comp-page">
+    <div class="comp-page" id="pageId">
         <h1>{{ msg }}</h1>
         <vofill-scroll :height="scrollHeight">
             <vofill-row name="按钮1：">
@@ -198,6 +203,10 @@
             //this.getData();
             this.getCascadeList(1);
             this.getCascadeList(2);
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
             addUser() {

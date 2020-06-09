@@ -1,27 +1,30 @@
 <template>
-    <div>
+    <div class="page-body" id="pageId">
         <h1>{{ msg }}</h1>
-        <div class="search">
-            <input type="text" v-model.trim="searchCont" />
-        </div>
-        <div class="table-box">
-            <vofill-table :list="tableList" @change="(da)=>{tableShowList = da}">
-                <div class="th-tr" slot="thead">
-                    <span v-for="(o, i) in tableHeadKey" :key="i">{{o}}</span>
-                </div>
-                <vofill-scroll :height="scrollHeight" slot="tbody">
-                    <div class="tb-tr" v-for="(o, i) in tableShowList" :key="i">
-                        <span v-for="(oo, ii) in tableHeadKey" :key="ii">{{o[ii]}}</span>
+        <vofill-scroll :height="pageScrollHeight">
+            <div class="search">
+                <input type="text" v-model.trim="searchCont" />
+            </div>
+            <div class="table-box">
+                <vofill-table :list="tableList" @change="(da)=>{tableShowList = da}">
+                    <div class="th-tr" slot="thead">
+                        <span v-for="(o, i) in tableHeadKey" :key="i">{{o}}</span>
                     </div>
-                </vofill-scroll>
-            </vofill-table>
-        </div>
+                    <vofill-scroll :height="scrollHeight" slot="tbody">
+                        <div class="tb-tr" v-for="(o, i) in tableShowList" :key="i">
+                            <span v-for="(oo, ii) in tableHeadKey" :key="ii">{{o[ii]}}</span>
+                        </div>
+                    </vofill-scroll>
+                </vofill-table>
+            </div>
+        </vofill-scroll>
     </div>
 </template>
 
 <script>
     import vofillTable from '../components/table'
     import vofillScroll from '../components/scroll'
+    import vofill from "../js/common/vofill.js";
 
     export default {
         name: 'Table',
@@ -33,6 +36,7 @@
             return {
                 msg: 'Welcome to Your table页',
                 scrollHeight: "600px",
+                pageScrollHeight: "",
                 tableHeadKey: {Id: "序号", Name: "姓名", Sex: "性别", Unit: "单位"},
                 tableList: [],
                 tableAllList: [],
@@ -42,6 +46,11 @@
         },
         created() {
             this.getTableList();
+        },
+        mounted() {
+            let pageHeight = vofill.getBrowserInfo("pageId").Height;
+            this.pageScrollHeight = (pageHeight - 30) + "px";
+            console.log(this.pageScrollHeight)
         },
         methods: {
             getTableList() {
