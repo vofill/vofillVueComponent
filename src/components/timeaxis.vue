@@ -7,7 +7,7 @@
 
 <template>
     <div class="timeaxis">
-        <div class="ta-list1">
+        <div class="ta-list1" v-if="localType==1">
             <div :class="['tsl1-item', {'active': o.Id == active}]" v-for="(o, i) in localList" :key="i">
                 <div class="tsl1i-left">
                     <div class="tsl1il-date">{{o.Date}}</div>
@@ -18,7 +18,18 @@
                 </div>
                 <div class="tsl1i-right">{{o.Content}}</div>
             </div>
-            
+        </div>
+        <div class="ta-list2" v-if="localType==2">
+            <div class="tsl2-item" v-for="(o, i) in localList" :key="i">
+                <div class="tsl2i-left">
+                    <div class="tsl2il-img"><img :src="o.Image" /></div>
+                    <div class="tsl2il-title">{{o.Title}}</div>
+                </div>
+                <div class="tsl2i-line">
+                    <div class="tsl2il-point"></div>
+                </div>
+                <div class="tsl2i-right">{{o.Content}}</div>
+            </div>
         </div>
     </div>
 </template>
