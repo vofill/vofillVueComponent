@@ -7,12 +7,9 @@
 </style>
 
 <template>
-    <div class="page-body tree-page" id="pageId">
-        <h1>{{ msg }}</h1>
-        <vofill-scroll :height="scrollHeight">
-            <vofill-row name="树状结构1："><vofill-tree :list="treeData" @itemClickToParent="getItemInfo"></vofill-tree></vofill-row>
-            <vofill-row class="row-temp" name="树状结构2："><vofill-tree :list="menuData" :type=2 @itemClickToParent="getItemInfo"></vofill-tree></vofill-row>
-        </vofill-scroll>
+    <div>
+        <vofill-row name="树状结构1："><vofill-tree :list="treeData" @itemClickToParent="getItemInfo"></vofill-tree></vofill-row>
+        <vofill-row class="row-temp" name="树状结构2："><vofill-tree :list="menuData" :type=2 @itemClickToParent="getItemInfo"></vofill-tree></vofill-row>
     </div>
 </template>
 
@@ -31,9 +28,6 @@
         },
         data () {
             return {
-                msg: 'Welcome to Your 树状结构页',
-                scrollHeight: "780px",
-                scrollWidth: "600px",
                 treeData: [],
                 menuData: [],
                 selObj: {SelId: "2"}
@@ -43,8 +37,6 @@
             this.getTreeData();
         },
         mounted() {
-            let pageHeight = vofill.getBrowserInfo("pageId").Height;
-            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
             getTreeData() {

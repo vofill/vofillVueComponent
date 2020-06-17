@@ -11,16 +11,13 @@
 </style>
 
 <template>
-    <div class="page-body" id="pageId">
-        <h1>{{ msg }}</h1>
-        <vofill-scroll :height="scrollHeight">
-            <div class="rsl-box">
-                <vofill-lrselect :type=1 :sel-obj="selObj" sel-key="SelIds"></vofill-lrselect>
-            </div>
-            <div class="rsl-box">
-                <vofill-lrselect :type=2 :sel-obj="selObj" sel-key="SelIds"></vofill-lrselect>
-            </div>
-        </vofill-scroll>
+    <div>
+        <div class="rsl-box">
+            <vofill-lrselect :type=1 :sel-obj="selObj" sel-key="SelIds"></vofill-lrselect>
+        </div>
+        <div class="rsl-box">
+            <vofill-lrselect :type=2 :sel-obj="selObj" sel-key="SelIds"></vofill-lrselect>
+        </div>
     </div>
 </template>
 
@@ -37,17 +34,12 @@
         },
         data () {
             return {
-                msg: 'Welcome to Your 左右选择页',
-                scrollHeight: "",
-                scrollWidth: "600px",
                 selObj: {SelIds: "4,5,6"}
             }
         },
         created() {
         },
         mounted() {
-            let pageHeight = vofill.getBrowserInfo("pageId").Height;
-            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
         },

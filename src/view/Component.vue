@@ -1,11 +1,6 @@
 <style>
     @import "../style/reset.css";
 
-    .comp-page {
-        width: 100%;
-        height: 100%;
-    }
-
     .comp-page .row {
         padding-right: 10px !important;
     }
@@ -29,88 +24,85 @@
 </style>
 
 <template>
-    <div class="comp-page" id="pageId">
-        <h1>{{ msg }}</h1>
-        <vofill-scroll :height="scrollHeight">
-            <vofill-row name="按钮1：">
-                <vofill-button></vofill-button>
-                <vofill-button title="默认"></vofill-button>
-                <vofill-button :disabled="1" title="不可操作"></vofill-button>
-                <vofill-button class="green" :disabled="buttonDisabled" title="加载动画" @buttonClickToParent="uploding"></vofill-button>
-                <vofill-button class="orange" :disabled="buttonDisabled" title="提示框1" @buttonClickToParent="promptBox1"></vofill-button>
-                <vofill-button class="delete red" :disabled="buttonDisabled" title="提示框2" @buttonClickToParent="promptBox2"></vofill-button>
-                <vofill-button class="blue" :disabled="buttonDisabled" title="提示框3" @buttonClickToParent="promptBox3"></vofill-button>
-            </vofill-row>
-            <vofill-row name="按钮2：">
-                <vofill-button class="add blue" :disabled="buttonDisabled" title="新增" @buttonClickToParent="addUser"></vofill-button>
-                <vofill-button class="update blue" :disabled="buttonDisabled" title="修改" @buttonClickToParent="addUser"></vofill-button>
-                <vofill-button class="edit blue" :disabled="buttonDisabled" title="编辑" @buttonClickToParent="addUser"></vofill-button>
-                <vofill-button class="detail blue" :disabled="buttonDisabled" title="详情" @buttonClickToParent="addUser"></vofill-button>
-                <vofill-button class="delete blue" :disabled="buttonDisabled" title="删除" @buttonClickToParent="promptBox2"></vofill-button>
-            </vofill-row>
-            <vofill-row name="switch：">
-                <vofill-switch :list="switchList1" :type=1 :sel-obj="selObj" sel-key="SwitchId1"></vofill-switch>
-                <vofill-switch :list="switchList2" :type=2 :sel-obj="selObj" sel-key="SwitchId2"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=3 :sel-obj="selObj" sel-key="SwitchId3"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=4 :sel-obj="selObj" sel-key="SwitchId4"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=5 :sel-obj="selObj" sel-key="SwitchId5"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=6 :sel-obj="selObj" sel-key="SwitchId6"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=7 :sel-obj="selObj" sel-key="SwitchId7"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=8 :sel-obj="selObj" sel-key="SwitchId8"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=9 :sel-obj="selObj" sel-key="SwitchId9"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=10 :sel-obj="selObj" sel-key="SwitchId10"></vofill-switch>
-                <vofill-switch :list="switchList1" :type=11 :sel-obj="selObj" sel-key="SwitchId11"></vofill-switch>
-            </vofill-row>
-            <vofill-row name="文件上传："><vofill-fileupload :list="fileList"></vofill-fileupload></vofill-row>
-            <vofill-row name="图片查看1：">
-                <div class="img-box">
-                    <div class="ib-item" v-for="(o, i) in imgList" :key="i" @click="previewImgClick(i)"><img :src="o" /></div>
-                </div>
-            </vofill-row>
-            <vofill-row name="图片查看2：">
-                <div class="img-box">
-                    <div class="ib-item" v-for="(o, i) in imgList" :key="i" @click="previewImgClick2(i)"><img :src="o" /></div>
-                </div>
-            </vofill-row>
-            <vofill-preview-img :type="prevImgType" :list="imgList" :index="currIndex" :show.sync="previewImgFlag" :autoplay.sync="autoplayImgFlag"></vofill-preview-img>
+    <div class="comp-page">
+        <vofill-row name="按钮1：">
+            <vofill-button></vofill-button>
+            <vofill-button title="默认"></vofill-button>
+            <vofill-button :disabled="1" title="不可操作"></vofill-button>
+            <vofill-button class="green" :disabled="buttonDisabled" title="加载动画" @buttonClickToParent="uploding"></vofill-button>
+            <vofill-button class="orange" :disabled="buttonDisabled" title="提示框1" @buttonClickToParent="promptBox1"></vofill-button>
+            <vofill-button class="delete red" :disabled="buttonDisabled" title="提示框2" @buttonClickToParent="promptBox2"></vofill-button>
+            <vofill-button class="blue" :disabled="buttonDisabled" title="提示框3" @buttonClickToParent="promptBox3"></vofill-button>
+        </vofill-row>
+        <vofill-row name="按钮2：">
+            <vofill-button class="add blue" :disabled="buttonDisabled" title="新增" @buttonClickToParent="addUser"></vofill-button>
+            <vofill-button class="update blue" :disabled="buttonDisabled" title="修改" @buttonClickToParent="addUser"></vofill-button>
+            <vofill-button class="edit blue" :disabled="buttonDisabled" title="编辑" @buttonClickToParent="addUser"></vofill-button>
+            <vofill-button class="detail blue" :disabled="buttonDisabled" title="详情" @buttonClickToParent="addUser"></vofill-button>
+            <vofill-button class="delete blue" :disabled="buttonDisabled" title="删除" @buttonClickToParent="promptBox2"></vofill-button>
+        </vofill-row>
+        <vofill-row name="switch：">
+            <vofill-switch :list="switchList1" :type=1 :sel-obj="selObj" sel-key="SwitchId1"></vofill-switch>
+            <vofill-switch :list="switchList2" :type=2 :sel-obj="selObj" sel-key="SwitchId2"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=3 :sel-obj="selObj" sel-key="SwitchId3"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=4 :sel-obj="selObj" sel-key="SwitchId4"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=5 :sel-obj="selObj" sel-key="SwitchId5"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=6 :sel-obj="selObj" sel-key="SwitchId6"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=7 :sel-obj="selObj" sel-key="SwitchId7"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=8 :sel-obj="selObj" sel-key="SwitchId8"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=9 :sel-obj="selObj" sel-key="SwitchId9"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=10 :sel-obj="selObj" sel-key="SwitchId10"></vofill-switch>
+            <vofill-switch :list="switchList1" :type=11 :sel-obj="selObj" sel-key="SwitchId11"></vofill-switch>
+        </vofill-row>
+        <vofill-row name="文件上传："><vofill-fileupload :list="fileList"></vofill-fileupload></vofill-row>
+        <vofill-row name="图片查看1：">
+            <div class="img-box">
+                <div class="ib-item" v-for="(o, i) in imgList" :key="i" @click="previewImgClick(i)"><img :src="o" /></div>
+            </div>
+        </vofill-row>
+        <vofill-row name="图片查看2：">
+            <div class="img-box">
+                <div class="ib-item" v-for="(o, i) in imgList" :key="i" @click="previewImgClick2(i)"><img :src="o" /></div>
+            </div>
+        </vofill-row>
+        <vofill-preview-img :type="prevImgType" :list="imgList" :index="currIndex" :show.sync="previewImgFlag" :autoplay.sync="autoplayImgFlag"></vofill-preview-img>
+        <vofill-row name="姓名：" class="must"><input type="text" /></vofill-row>
+        <vofill-row name="手机号："><input type="text" /></vofill-row>
+        <vofill-row name="单选下拉1："><vofill-select :list="list" :sel-obj="selObj" sel-key="SelId"></vofill-select></vofill-row>
+        <vofill-row name="单选下拉2："><vofill-select :list="list2" :type=2 :sel-obj="selObj" sel-key="SelName"></vofill-select></vofill-row>
+        <vofill-row name="多选下拉1："><vofill-select :list="list" :type=3 :sel-obj="selObj" sel-key="SelIds"></vofill-select></vofill-row>
+        <vofill-row name="多选下拉2："><vofill-select :list="list2" :type=4 :sel-obj="selObj" sel-key="SelNames"></vofill-select></vofill-row>
+        <vofill-row name="级联1：">
+            <vofill-cascade :title-list="['年份', '月份', '日期']" :fir-list="cascadeFirList" :sec-list="cascadeSecList" :thd-list="cascadeThdList" :sel-obj="selObj" sel-key="CascadeVal" @notice-to-parent1="toGetSecList" @notice-to-parent2="toGetThdList" @notice-to-parent3="toChangeThdVal"></vofill-cascade>
+        </vofill-row>
+        <vofill-row name="级联2：">
+            <vofill-cascade :title-list="['省份', '城市', '区县']" :fir-list="provinceList" :sec-list="cityList" :thd-list="countyList" :sel-obj="selObj" sel-key="AreaVal" @notice-to-parent1="toGetCityList" @notice-to-parent2="toGetCountyList" @notice-to-parent3="toChangeCountyVal"></vofill-cascade>
+        </vofill-row>
+        <vofill-row name="单选："><vofill-radio :list="radioList1" :sel-obj="selObj" sel-key="RadioId"></vofill-radio></vofill-row>
+        <vofill-row name="单选2："><vofill-radio :list="radioList2" :type=2 :sel-obj="selObj" sel-key="RadioName"></vofill-radio></vofill-row>
+        <vofill-row name="多选："><vofill-checkbox :list="checkboxList1" :sel-obj="selObj" sel-key="CheckboxIds"></vofill-checkbox></vofill-row>
+        <vofill-row name="多选2："><vofill-checkbox :type=2 :list="checkboxList2" :sel-obj="selObj" sel-key="CheckboxName"></vofill-checkbox></vofill-row>
+        <vofill-row name="日期："><vofill-date :type=1 :sel-obj="selObj" sel-key="Date"></vofill-date></vofill-row>
+        <vofill-row name="时间1："><vofill-time :type=1 :sel-val="timeVal" @onChangeSelval="getTimeSelVal"></vofill-time></vofill-row>
+        <vofill-row name="时间2："><vofill-time :type=2 :sel-obj="selObj" sel-key="Time"></vofill-time></vofill-row>
+        <vofill-loading :title="loadingTitle" :show.sync="loadingFlag"></vofill-loading>
+        <vofill-popup :title="popupTitle" :show.sync="popupFlag" @clickOkPopupToParent="saveInfo()">
             <vofill-row name="姓名：" class="must"><input type="text" /></vofill-row>
             <vofill-row name="手机号："><input type="text" /></vofill-row>
             <vofill-row name="单选下拉1："><vofill-select :list="list" :sel-obj="selObj" sel-key="SelId"></vofill-select></vofill-row>
             <vofill-row name="单选下拉2："><vofill-select :list="list2" :type=2 :sel-obj="selObj" sel-key="SelName"></vofill-select></vofill-row>
-            <vofill-row name="多选下拉1："><vofill-select :list="list" :type=3 :sel-obj="selObj" sel-key="SelIds"></vofill-select></vofill-row>
-            <vofill-row name="多选下拉2："><vofill-select :list="list2" :type=4 :sel-obj="selObj" sel-key="SelNames"></vofill-select></vofill-row>
-            <vofill-row name="级联1：">
-                <vofill-cascade :title-list="['年份', '月份', '日期']" :fir-list="cascadeFirList" :sec-list="cascadeSecList" :thd-list="cascadeThdList" :sel-obj="selObj" sel-key="CascadeVal" @notice-to-parent1="toGetSecList" @notice-to-parent2="toGetThdList" @notice-to-parent3="toChangeThdVal"></vofill-cascade>
-            </vofill-row>
-            <vofill-row name="级联2：">
-                <vofill-cascade :title-list="['省份', '城市', '区县']" :fir-list="provinceList" :sec-list="cityList" :thd-list="countyList" :sel-obj="selObj" sel-key="AreaVal" @notice-to-parent1="toGetCityList" @notice-to-parent2="toGetCountyList" @notice-to-parent3="toChangeCountyVal"></vofill-cascade>
-            </vofill-row>
+            <vofill-row name="姓名：" class="must"><input type="text" /></vofill-row>
+            <vofill-row name="手机号："><input type="text" /></vofill-row>
+            <vofill-row name="下拉1："><vofill-select :list="list" :sel-obj="selObj" sel-key="SelId"></vofill-select></vofill-row>
+            <vofill-row name="下拉2："><vofill-select :list="list2" :type=2 :sel-obj="selObj" sel-key="SelName"></vofill-select></vofill-row>
             <vofill-row name="单选："><vofill-radio :list="radioList1" :sel-obj="selObj" sel-key="RadioId"></vofill-radio></vofill-row>
             <vofill-row name="单选2："><vofill-radio :list="radioList2" :type=2 :sel-obj="selObj" sel-key="RadioName"></vofill-radio></vofill-row>
             <vofill-row name="多选："><vofill-checkbox :list="checkboxList1" :sel-obj="selObj" sel-key="CheckboxIds"></vofill-checkbox></vofill-row>
-            <vofill-row name="多选2："><vofill-checkbox :type=2 :list="checkboxList2" :sel-obj="selObj" sel-key="CheckboxName"></vofill-checkbox></vofill-row>
             <vofill-row name="日期："><vofill-date :type=1 :sel-obj="selObj" sel-key="Date"></vofill-date></vofill-row>
-            <vofill-row name="时间1："><vofill-time :type=1 :sel-val="timeVal" @onChangeSelval="getTimeSelVal"></vofill-time></vofill-row>
-            <vofill-row name="时间2："><vofill-time :type=2 :sel-obj="selObj" sel-key="Time"></vofill-time></vofill-row>
-            <vofill-loading :title="loadingTitle" :show.sync="loadingFlag"></vofill-loading>
-            <vofill-popup :title="popupTitle" :show.sync="popupFlag" @clickOkPopupToParent="saveInfo()">
-                <vofill-row name="姓名：" class="must"><input type="text" /></vofill-row>
-                <vofill-row name="手机号："><input type="text" /></vofill-row>
-                <vofill-row name="单选下拉1："><vofill-select :list="list" :sel-obj="selObj" sel-key="SelId"></vofill-select></vofill-row>
-                <vofill-row name="单选下拉2："><vofill-select :list="list2" :type=2 :sel-obj="selObj" sel-key="SelName"></vofill-select></vofill-row>
-                <vofill-row name="姓名：" class="must"><input type="text" /></vofill-row>
-                <vofill-row name="手机号："><input type="text" /></vofill-row>
-                <vofill-row name="下拉1："><vofill-select :list="list" :sel-obj="selObj" sel-key="SelId"></vofill-select></vofill-row>
-                <vofill-row name="下拉2："><vofill-select :list="list2" :type=2 :sel-obj="selObj" sel-key="SelName"></vofill-select></vofill-row>
-                <vofill-row name="单选："><vofill-radio :list="radioList1" :sel-obj="selObj" sel-key="RadioId"></vofill-radio></vofill-row>
-                <vofill-row name="单选2："><vofill-radio :list="radioList2" :type=2 :sel-obj="selObj" sel-key="RadioName"></vofill-radio></vofill-row>
-                <vofill-row name="多选："><vofill-checkbox :list="checkboxList1" :sel-obj="selObj" sel-key="CheckboxIds"></vofill-checkbox></vofill-row>
-                <vofill-row name="日期："><vofill-date :type=1 :sel-obj="selObj" sel-key="Date"></vofill-date></vofill-row>
-                <vofill-row name="时间："><vofill-time :type=1 :sel-obj="selObj" sel-key="Time"></vofill-time></vofill-row>
-            </vofill-popup>
-            <vofill-tipsbox :type="tipsboxType" :title="tipsboxTitle" :content="tipsboxContent" :show.sync="tipsboxFlag"></vofill-tipsbox>
-            <vofill-tipsbox :type="tipsboxType" :title="tipsboxTitle" :content="tipsboxContent" :show.sync="tipsboxFlag" @clickOkTipsboxToParent="deleteData()"></vofill-tipsbox>
-        </vofill-scroll>
+            <vofill-row name="时间："><vofill-time :type=1 :sel-obj="selObj" sel-key="Time"></vofill-time></vofill-row>
+        </vofill-popup>
+        <vofill-tipsbox :type="tipsboxType" :title="tipsboxTitle" :content="tipsboxContent" :show.sync="tipsboxFlag"></vofill-tipsbox>
+        <vofill-tipsbox :type="tipsboxType" :title="tipsboxTitle" :content="tipsboxContent" :show.sync="tipsboxFlag" @clickOkTipsboxToParent="deleteData()"></vofill-tipsbox>
     </div>
 </template>
 
@@ -153,8 +145,6 @@
         },
         data () {
             return {
-                msg: 'Welcome to Your 组件页',
-                scrollHeight: "780px",
                 scrollWidth: "600px",
                 loadingFlag: false,
                 loadingTitle: "数据加载中",
@@ -205,8 +195,6 @@
             this.getCascadeList(2);
         },
         mounted() {
-            let pageHeight = vofill.getBrowserInfo("pageId").Height;
-            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
             addUser() {

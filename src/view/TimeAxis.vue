@@ -1,16 +1,13 @@
 <template>
-    <div class="page-body" id="pageId">
-        <h1>{{ msg }}</h1>
-        <vofill-scroll :height="scrollHeight">
-            <div class="time-axis1">
-                <div class="ta-title">时间轴组件一</div>
-                <vofill-time-axis :type=1 :list="dataList"></vofill-time-axis>
-            </div>
-            <div class="time-axis2">
-                <div class="ta-title">时间轴组件二</div>
-                <vofill-time-axis :type=2 :list="dataList"></vofill-time-axis>
-            </div>
-        </vofill-scroll>
+    <div>
+        <div class="time-axis1">
+            <div class="ta-title">时间轴组件一</div>
+            <vofill-time-axis :type=1 :list="dataList"></vofill-time-axis>
+        </div>
+        <div class="time-axis2">
+            <div class="ta-title">时间轴组件二</div>
+            <vofill-time-axis :type=2 :list="dataList"></vofill-time-axis>
+        </div>
     </div>
 </template>
 
@@ -27,8 +24,6 @@
         },
         data () {
             return {
-                msg: 'Welcome to Your 时间轴组件页',
-                scrollHeight: "780px",
                 dataList: [{Id: 1, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03", Image: "https://tianwenfei.com:8443/shopFile/huntShop/Image/9f0486d6-fb38-254e-8056-4d0dc3e4e11a.jpg"},
                             {Id: 2, Title: "这是一个标题", Content: "这是具体内容", Date: "2020-06-03", Image: "https://tianwenfei.com:8443/shopFile/huntShop/Image/2947fc3e-2375-242a-c6c2-02f8b0c7eef5.jpg"},
                             {Id: 3, Title: "这是一个标题", Content: "这是具体内容这是具体内容", Date: "2020-06-03", Image: "https://tianwenfei.com:8443/shopFile/huntShop/Image/674784ff-5e4b-fb09-23d1-6585cf69139f.jpg"},
@@ -39,8 +34,6 @@
         created() {
         },
         mounted() {
-            let pageHeight = vofill.getBrowserInfo("pageId").Height;
-            this.scrollHeight = (pageHeight - 30) + "px";
         },
         methods: {
         },

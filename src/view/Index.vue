@@ -4,10 +4,8 @@
 </style>
 
 <template>
-    <div class="page-body" id="pageId">
+    <div>
         <h1>{{ msg }}</h1>
-        <vofill-scroll :height="scrollHeight">
-        </vofill-scroll>
     </div>
 </template>
 
@@ -17,13 +15,10 @@
         name: 'HelloWorld',
         data () {
             return {
-                msg: 'Welcome to Your 首页',
-                scrollHeight: ""
+                msg: 'Welcome to Your 首页'
             }
         },
         mounted() {
-            let pageHeight = vofill.getBrowserInfo("pageId").Height;
-            this.scrollHeight = (pageHeight - 30) + "px";
         }
     }
 </script>

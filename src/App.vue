@@ -19,14 +19,23 @@
         <div class="hp-left" id="hpLeft">
             <vofill-scroll :height="leftScrollHeight">
                 <div class="hpl-menu">
-                    <router-link v-for="(item, index) in menuItems" :key="index" tag="div" :class="['hplmi-row', `icon-${item.Class}`, {'active':menuActive==item.Id}]" @click.native="menuActive=item.Id" :to="item.Url" >
+                    <router-link v-for="(item, index) in menuItems" :key="index" tag="div" :class="['hplmi-row', `icon-${item.Class}`, {'active':menuActive==item.Id}]" @click.native="menuActive=item.Id,naviInfo=item.Name" :to="item.Url" >
                         {{item.Name}}
                     </router-link>
                 </div>
             </vofill-scroll>
         </div>
-        <div class="hp-right" id="hpRight">
-            <router-view></router-view>
+        <div class="hp-right">
+            <div class="hpr-navi">
+                <div class="hprn-tag">
+                    <span>{{naviInfo}}</span>
+                </div>
+            </div>
+            <div class="hpr-page" id="hprPage">
+                <vofill-scroll :height="pageScrollHeight">
+                    <router-view></router-view>
+                </vofill-scroll>
+            </div>
         </div>
     </div>
 </template>
@@ -44,7 +53,9 @@
         data(){
             return {
                 leftScrollHeight: "",
+                pageScrollHeight: "",
                 menuActive: 1,
+                naviInfo: "",
                 menuItems: [{Id: 1, Name: "首页", Url: "Index", Class:"home"}, {Id: 2, Name: "通用组件", Url: "component", Class:"component"},
                             {Id: 3, Name: "table组件", Url: "table", Class:"table"}, {Id: 4, Name: "滑块组件", Url: "slider", Class:"slider"},
                             {Id: 5, Name: "进度条组件", Url: "progressBar", Class:"progress"}, {Id: 6, Name: "左右选择组件", Url: "lrSelect", Class:"lrselect"},
@@ -58,6 +69,7 @@
         mounted() {
             let leftHeight = vofill.getBrowserInfo("hpLeft").Height;
             this.leftScrollHeight = (leftHeight - 20) + "px";
+            this.pageScrollHeight = vofill.getBrowserInfo("hprPage").Height + "px";
         }
     }
 </script>
