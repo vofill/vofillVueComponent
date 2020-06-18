@@ -146,7 +146,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .graphicreport {
-        width: 400px;
+        width: 600px;
         height: 400px;
     }
 </style>

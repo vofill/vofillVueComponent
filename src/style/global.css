@@ -456,8 +456,8 @@ button:hover {
 }
 
 .tsl2-item .tsl2i-line:before {
-    top: 6px;
-    width: 100%;
+    top: 40%;
+    width: 50%;
     content: '';
     height: 0.5em;
     position: absolute;
@@ -469,10 +469,46 @@ button:hover {
 }
 
 .tsl2-item .tsl2i-line::after {
+    top: 72px;
     left: 59px;
+}
+
+.tsl2i-line .tsl2il-point {
+    top: 36%;
 }
 
 .tsl2-item .tsl2i-right {
     width: 55%;
+    position: relative;
+}
+
+.tsl2-item .tsl2i-right:before {
+    top: 42.5%;
+    left: -14%;
+    width: 60px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+}
+
+.tsl2i-right .tsl2ir-box {
+    top: 8.5%;
+    left: 5%;
+    width: 100%;
+    padding: 10px;
+    min-height: 100px;
+    position: relative;
+    border: 2px solid var(--border-color);
+}
+
+.tsl2i-right .tsl2ir-box::before {
+    top: 28px;
+    left: -28px;
+    content: "";
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 26px solid var(--border-color);
 }
 /*时间轴组件样式-----end*/

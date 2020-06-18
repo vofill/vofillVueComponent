@@ -28,7 +28,9 @@
                 <div class="tsl2i-line">
                     <div class="tsl2il-point"></div>
                 </div>
-                <div class="tsl2i-right">{{o.Content}}</div>
+                <div class="tsl2i-right">
+                    <div class="tsl2ir-box">{{o.Content}}</div>
+                </div>
             </div>
         </div>
     </div>
