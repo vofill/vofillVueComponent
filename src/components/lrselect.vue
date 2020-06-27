@@ -26,7 +26,15 @@
                             </div>
                         </template>
                         <template v-if="localType == 3">
-                            <div class="lrsbll-item3">
+                            <div class="lrsbll-item3" v-for="(o, i) in unSelectedList" :key="i" @click="o[0].showFlag=!o[0].showFlag">
+                                <span class="open">{{o[0].DeptName}}</span>
+                                <div :class="['d-checkbox', {'checked': leftActive.indexOf(o.Id)>-1}]"></div>
+                                <div class="lrsblli-group" v-show="!o[0].showFlag">
+                                    <div class="lrsbll-item3" v-for="(oo, ii) in o" :key="ii">
+                                        <span>{{oo.Name}}</span>
+                                        <div :class="['d-checkbox', {'checked': leftActive.indexOf(oo.Id)>-1}]">{{oo.showFlag}}</div>
+                                    </div>
+                                </div>
                             </div>
                         </template>
                     </vofill-scroll>
@@ -40,19 +48,31 @@
             </div>
             <div class="lrsb-right">
                 <div class="lrsbr-title">已选({{selectedList.length}})<i class="lrsbl-clear" @click="clearSelected()">清空</i></div>
-                <div class="lrsbl-list">
+                <div class="lrsbr-list">
+                    <vofill-scroll :height="scrollHeight">
+                        <template v-if="localType == 1">
+                            <div :class="['lrsbr-item1', {'active': rightActive.indexOf(o.Id)>-1}]" v-for="(o, i) in selectedList" :key="i" @click="itemClick(2, o.Id)" v-show="rightSearchCont.length == 0 || o.Name.indexOf(rightSearchCont) > -1">{{o.Name}}</div>
+                        </template>
+                        <template v-if="localType == 2">
+                            <div class="lrsbr-item2" v-for="(o, i) in selectedList" :key="i" v-show="rightSearchCont.length == 0 || o.Name.indexOf(rightSearchCont) > -1">
+                                <span>{{o.Name}}</span>
+                                <div :class="['d-checkbox', {'checked': rightActive.indexOf(o.Id)>-1}]" @click="itemClick(2, o.Id)" ></div>
+                            </div>
+                        </template>
+                        <template v-if="localType == 3">
+                            <div class="lrsbrl-item3" v-for="(o, i) in selectedList" :key="i">
+                                <span class="open">{{o[0].DeptName}}</span>
+                                <div :class="['d-checkbox', {'checked': rightActive.indexOf(o.Id)>-1}]"></div>
+                                <div class="lrsbrli-group">
+                                    <div class="lrsbrl-item3" v-for="(oo, ii) in o" :key="ii">
+                                        <span>{{oo.Name}}</span>
+                                        <div :class="['d-checkbox', {'checked': rightActive.indexOf(oo.Id)>-1}]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </vofill-scroll>
                 </div>
-                <vofill-scroll :height="scrollHeight">
-                    <template v-if="localType == 1">
-                        <div :class="['lrsbr-item1', {'active': rightActive.indexOf(o.Id)>-1}]" v-for="(o, i) in selectedList" :key="i" @click="itemClick(2, o.Id)" v-show="rightSearchCont.length == 0 || o.Name.indexOf(rightSearchCont) > -1">{{o.Name}}</div>
-                    </template>
-                    <template v-if="localType == 2">
-                        <div class="lrsbr-item2" v-for="(o, i) in selectedList" :key="i" v-show="rightSearchCont.length == 0 || o.Name.indexOf(rightSearchCont) > -1">
-                            <span>{{o.Name}}</span>
-                            <div :class="['d-checkbox', {'checked': rightActive.indexOf(o.Id)>-1}]" @click="itemClick(2, o.Id)" ></div>
-                        </div>
-                    </template>
-                </vofill-scroll>
             </div>
         </div>
         
@@ -96,6 +116,7 @@
                     var tempList2 = vofill.groupby(tempList, function(item){
                                     return [item.DeptId];
                                 });
+                    console.log(tempList2)
                     return tempList2;
                 }
             },

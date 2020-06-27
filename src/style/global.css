@@ -605,7 +605,7 @@ button:hover {
 }
 
 .lrsb-left .lrsbl-list,
-.lrsb-left .lrsbr-list {
+.lrsb-right .lrsbr-list {
     height: 460px;
 }
 
@@ -677,13 +677,17 @@ button:hover {
 }
 
 .lrsb-left .lrsbll-item2,
-.lrsb-right .lrsbr-item2 {
+.lrsb-right .lrsbr-item2,
+.lrsb-left .lrsbll-item3,
+.lrsb-right .lrsbrl-item3 {
     cursor: unset;
     line-height: unset;
 }
 
 .lrsbll-item2 span,
-.lrsbr-item2 span {
+.lrsbr-item2 span,
+.lrsbll-item3 span,
+.lrsbrl-item3 span {
     width: 240px;
     height: 32px;
     overflow: hidden;
@@ -695,13 +699,15 @@ button:hover {
 }
 
 .lrsbll-item2 .d-checkbox,
-.lrsbr-item2 .d-checkbox {
+.lrsbr-item2 .d-checkbox,
+.lrsbll-item3 .d-checkbox,
+.lrsbrl-item3 .d-checkbox {
     top: -7px;
 }
 
-.lrsbl-list .lrsbll-item3 {
+.lrsbl-list .lrsbll-item3,
+.lrsbr-list .lrsbrl-item3 {
     width: 285px;
-    height: 32px;
     margin: 0 auto;
     padding: 0 10px;
     cursor: pointer;
@@ -709,5 +715,57 @@ button:hover {
     line-height: 32px;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.lrsbll-item3 .lrsblli-group,
+.lrsbrl-item3 .lrsbrli-group {
+    padding-left: 10px;
+}
+
+.lrsblli-group .lrsbll-item3,
+.lrsbrli-group .lrsbrl-item3 {
+    width: 255px;
+}
+
+.lrsbll-item3 span,
+.lrsbrl-item3 span {
+    padding-left: 20px;
+    position: relative;
+}
+
+.lrsbll-item3 span.hide:before,
+.lrsbrl-item3 span.hide:before {
+    width: 0;
+    height: 0;
+    top: 13px;
+    left: 10px;
+    content: "";
+    position: absolute;
+    border-left: 5px solid #8691a3;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.lrsbll-item3 span.open:before,
+.lrsbrl-item3 span.open:before {
+    width: 0;
+    height: 0;
+    top: 15px;
+    left: 6px;
+    content: "";
+    position: absolute;
+    border-top: 5px solid var(--blue);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.lrsblli-group .lrsbll-item3 .d-checkbox,
+.lrsbrli-group .lrsbrl-item3 .d-checkbox {
+    right: 20px;
+}
+
+.lrsbll-item3 .d-checkbox.checked:after,
+.lrsbrl-item3 .d-checkbox.checked:after {
+    top: -7px;
 }
 /*时间轴组件样式-----end*/
