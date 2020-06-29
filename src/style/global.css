@@ -710,7 +710,6 @@ button:hover {
     width: 285px;
     margin: 0 auto;
     padding: 0 10px;
-    cursor: pointer;
     overflow: hidden;
     line-height: 32px;
     white-space: nowrap;
@@ -729,6 +728,7 @@ button:hover {
 
 .lrsbll-item3 span,
 .lrsbrl-item3 span {
+    cursor: pointer;
     padding-left: 20px;
     position: relative;
 }
@@ -767,5 +767,9 @@ button:hover {
 .lrsbll-item3 .d-checkbox.checked:after,
 .lrsbrl-item3 .d-checkbox.checked:after {
     top: -7px;
+}
+
+.lrsbll-item3 .lrsbll-sub span {
+    cursor: unset;
 }
 /*时间轴组件样式-----end*/
