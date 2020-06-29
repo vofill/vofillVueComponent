@@ -30,7 +30,7 @@
                                 <span :class="[{'hide': o[0].ShowFlag}, {'open': !o[0].ShowFlag}]" @click="showGroupItem(1, o[0].Id)">{{o[0].DeptName}}</span>
                                 <div :class="['d-checkbox', {'checked': (leftActive[i] && leftActive[i].length == o.length)}]" @click="groupItemAllCheck(1, i)"></div>
                                 <div class="lrsblli-group" v-show="!o[0].ShowFlag">
-                                    <div class="lrsbll-item3 lrsbll-sub" v-for="(oo, ii) in o" :key="ii">
+                                    <div class="lrsbll-item3 lrsbll-sub" v-for="(oo, ii) in o" :key="ii" v-show="leftSearchCont.length == 0 || oo.Name.indexOf(leftSearchCont) > -1">
                                         <span>{{oo.Name}}</span>
                                         <div :class="['d-checkbox', {'checked': leftActive[i] && leftActive[i].indexOf(oo.Id)>-1}]" @click="itemClick(3, i, oo.Id)"></div>
                                     </div>
@@ -64,7 +64,7 @@
                                 <span :class="[{'hide': o[0].ShowFlag}, {'open': !o[0].ShowFlag}]" @click="showGroupItem(2, o[0].Id)">{{o[0].DeptName}}</span>
                                 <div :class="['d-checkbox', {'checked': (rightActive[i] && rightActive[i].length == o.length)}]" @click="groupItemAllCheck(2, i)"></div>
                                 <div class="lrsbrli-group" v-show="!o[0].ShowFlag">
-                                    <div class="lrsbrl-item3" v-for="(oo, ii) in o" :key="ii">
+                                    <div class="lrsbrl-item3" v-for="(oo, ii) in o" :key="ii" v-show="rightSearchCont.length == 0 || oo.Name.indexOf(rightSearchCont) > -1">
                                         <span>{{oo.Name}}</span>
                                         <div :class="['d-checkbox', {'checked': rightActive[i] && rightActive[i].indexOf(oo.Id)>-1}]" @click="itemClick(4, i, oo.Id)"></div>
                                     </div>
@@ -116,7 +116,6 @@
                     var tempList2 = vofill.groupby(tempList, function(item){
                                     return [item.DeptId];
                                 });
-                    console.log(tempList2)
                     return tempList2;
                 }
             },
@@ -150,19 +149,63 @@
                         this.rightActive.push(id);
                     }
                 } else if(t == 3) {//有子父级待选数据选择事件
-
+                    if(this.leftActive[index]) {
+                        let ind = this.leftActive[index].indexOf(id);
+                        if(ind > -1) {
+                            this.leftActive[index].splice(ind, 1);
+                        } else {
+                            this.leftActive[index].push(id);
+                        }
+                    } else {
+                        this.$set(this.leftActive, index, []);
+                        this.leftActive[index].push(id);
+                    }
                 } else if(t == 4) {//有子父级已选数据选择事件
-
+                    if(this.rightActive[index]) {
+                        let ind = this.rightActive[index].indexOf(id);
+                        if(ind > -1) {
+                            this.rightActive[index].splice(ind, 1);
+                        } else {
+                            this.rightActive[index].push(id);
+                        }
+                    } else {
+                        this.$set(this.rightActive, index, []);
+                        this.rightActive[index].push(id);
+                    }
                 }
             },
             //数据移动
             moveItem(t) {
                 var arrTemp = [];
                 if(t == 1) {
-                    arrTemp = this.active.concat(this.leftActive);
+                    if(this.localType == 1 || this.localType == 2) {
+                        arrTemp = this.active.concat(this.leftActive);
+                    } else if(this.localType == 3) {
+                        if(this.leftActive.length > 0) {
+                            this.leftActive.forEach(o=> {
+                                if(o.length > 0) {
+                                    arrTemp = [];
+                                    arrTemp = this.active.concat(o);
+                                    this.active = arrTemp;
+                                }
+                            });
+                        }
+                    }
                     this.leftActive = [];
                 } else {
-                    arrTemp = vofill.mergeArray(this.active, this.rightActive);
+                    if(this.localType == 1 || this.localType == 2) {
+                        arrTemp = vofill.mergeArray(this.active, this.rightActive);
+                    } else if(this.localType == 3) {
+                        if(this.rightActive.length > 0) {
+                            this.rightActive.forEach(o=> {
+                                if(o.length > 0) {
+                                    arrTemp = [];
+                                    arrTemp = vofill.mergeArray(this.active, o);
+                                    this.active = arrTemp;
+                                }
+                            });
+                        }
+                    }
                     this.rightActive = [];
                 }
                 this.active = arrTemp;
