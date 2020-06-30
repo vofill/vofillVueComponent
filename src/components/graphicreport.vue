@@ -38,7 +38,7 @@
                 this.drawBrokenLine();
             } else if(this.localType == 4) {//折点折线图
                 this.drawBrokenLine2();
-            } else if(this.localType == 5) {//饼图
+            } else if(this.localType == 5) {//定制饼图
                 this.drawCustomizedPie();
             }
             
@@ -394,6 +394,10 @@
                         }
                     ]
                 });
+            },
+            //定制饼图
+            drawCustomizedPie() {
+                
             }
         },
         watch: {
