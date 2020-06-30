@@ -103,7 +103,7 @@
         flex-direction: column;
         background: var(--white);
         color: var(--font-color);
-        margin: -400px 0px 0px -300px;
+        margin: -350px 0px 0px -300px;
     }
 
     .p-box .pb-top {
