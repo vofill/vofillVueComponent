@@ -397,7 +397,47 @@
             },
             //定制饼图
             drawCustomizedPie() {
-                
+                var obj = this;
+                // 绘制饼状图表
+                obj.myChart.setOption({
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b}: {c} ({d}%)'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 10,
+                        data: ['钢材', '汽车', '水泥', '重金属', '电缆']
+                    },
+                    series: [
+                        {
+                            name: '数据来源',
+                            type: 'pie',
+                            radius: [70, 110],
+                            center: ['40%', '35%'],
+                            label: {
+                                show: true,
+                                position: 'outside'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '20'
+                                },
+                                labelLine: {
+                                    show: true
+                                }
+                            },
+                            data: [
+                                {value: 335, name: '钢材'},
+                                {value: 310, name: '汽车'},
+                                {value: 234, name: '水泥'},
+                                {value: 135, name: '重金属'},
+                                {value: 1548, name: '电缆'}
+                            ]
+                        }
+                    ]
+                });
             }
         },
         watch: {
