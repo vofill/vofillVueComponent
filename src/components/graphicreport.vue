@@ -256,12 +256,6 @@
                                         color:'#3981e3' //折线颜色
                                     }
                                 }
-                            },
-                            markPoint: {     //显示一定区域内的最大值和最小值
-                                data: [
-                                    { type: 'max', name: '最大值' },
-                                    { type: 'min', name: '最小值' }
-                                ]
                             }
                         },
                         {
@@ -278,6 +272,11 @@
                             }
                         }
                     ]
+                });
+                obj.myChart.on('mouseover', "series.line", function (params) {
+                    params.data = 200;
+                    params.value = 200;
+                    console.log(params);
                 });
             },
             //折线图
