@@ -23,31 +23,16 @@
             return {
                 localkey: this.name
             }
+        },
+        watch: {
+            name(nv) {
+                this.localkey = nv;
+            }
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .row {
-        width: 100%;
-        display: flex;
-        padding: 10px 0;
-        color: var(--font-color);
-    }
     
-    .row .r-key {
-        width: 120px;
-        line-height: 40px;
-        text-align: right;
-    }
-
-    .row .r-val {
-        width: 100%;
-    }
-
-    .row.must .r-key:before {
-        content: "*";
-        color: var(--alert-color);
-    }
 </style>

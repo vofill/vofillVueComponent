@@ -37,7 +37,7 @@
 
 <script>
     export default {
-        name: "vofill-tipsbox",
+        name: "vofill-previewimg",
         props: {              //prop接收传过来的参数
             type: {default: 1},
             index: Number,

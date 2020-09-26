@@ -1,3 +1,27 @@
+/* 行标签样式----begin */
+.row {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    color: var(--font-color);
+}
+
+.row .r-key {
+    width: 120px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.row .r-val {
+    flex: 1;
+}
+
+.row.must .r-key:before {
+    content: "*";
+    color: var(--alert-color);
+}
+/* 行标签样式----end */
+
 /*选择框样式----begin*/
 div.d-checkbox {
     width: 18px;
@@ -542,7 +566,7 @@ button:hover {
     width: 20px;
     height: 20px;
     position: absolute;
-    background: url("../assets/search.png")
+    background: url("../assets/search.png");
 }
 
 .lrss-left input,
@@ -773,3 +797,411 @@ button:hover {
     cursor: unset;
 }
 /*时间轴组件样式-----end*/
+
+/* 拖拽组件样式------begin */
+.dragdrop {
+    width: 100%;
+    height: 100%;
+}
+
+.dragdrop .dd-top-btn {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #eff0f2;
+}
+
+.dd-top-btn .ddtb-tabs {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ddtb-tabs .ddtbt-item {
+    width: 100px;
+    cursor: pointer;
+    line-height: 60px;
+    text-align: center;
+}
+
+.ddtb-tabs .ddtbt-item.active {
+    border-bottom: 1px solid var(--blue);
+}
+
+.dd-top-btn .ddtb-btns {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.ddtb-btns .ddbtb-btn {
+    height: 30px;
+    cursor: pointer;
+    line-height: 30px;
+    margin: 15px 20px;
+    color: var(--blue);
+}
+
+.dragdrop .dd-left {
+    top: 60px;
+    left: 0px;
+    bottom: 0px;
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border-right: solid 2px #eff0f2;
+}
+
+.dd-left .ddl-item {
+    width: 100%;
+    height: 50px;
+    cursor: move;
+    line-height: 50px;
+    position: relative;
+    padding-left: 50px;
+}
+
+.dd-left .ddl-item.active,
+.dd-left .ddl-item:hover {
+    cursor: pointer;
+    color: var(--white);
+    background: var(--blue);
+}
+
+.dd-left .ddl-item::before {
+    top: 15px;
+    left: 15px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.dd-left .ddl-item.ddli-oneRowOneCol::before {
+    background: url("../assets/oneRowOneCol_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-oneRowOneCol::before,
+.dd-left .ddl-item:hover.ddli-oneRowOneCol::before {
+    background: url("../assets/oneRowOneCol_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-oneRowTwoCol::before {
+    background: url("../assets/oneRowTwoCol_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-oneRowTwoCol::before,
+.dd-left .ddl-item:hover.ddli-oneRowTwoCol::before {
+    background: url("../assets/oneRowTwoCol_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-oneRowThreeCol::before {
+    background: url("../assets/oneRowThreeCol_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-oneRowThreeCol::before,
+.dd-left .ddl-item:hover.ddli-oneRowThreeCol::before {
+    background: url("../assets/oneRowThreeCol_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-input::before {
+    background: url("../assets/input_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-input::before,
+.dd-left .ddl-item:hover.ddli-input::before {
+    background: url("../assets/input_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-textarea::before {
+    background: url("../assets/textarea_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-textarea::before,
+.dd-left .ddl-item:hover.ddli-textarea::before {
+    background: url("../assets/textarea_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-radio::before {
+    background: url("../assets/radio_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-radio::before,
+.dd-left .ddl-item:hover.ddli-radio::before {
+    background: url("../assets/radio_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-checkbox::before {
+  background: url("../assets/checkbox_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-checkbox::before,
+.dd-left .ddl-item:hover.ddli-checkbox::before {
+  background: url("../assets/checkbox_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-select::before {
+  background: url("../assets/select_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-select::before,
+.dd-left .ddl-item:hover.ddli-select::before {
+  background: url("../assets/select_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-time::before {
+  background: url("../assets/time_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-time::before,
+.dd-left .ddl-item:hover.ddli-time::before {
+  background: url("../assets/time_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-date::before {
+  background: url("../assets/date_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-date::before,
+.dd-left .ddl-item:hover.ddli-date::before {
+  background: url("../assets/date_icon2.png");
+}
+
+.dd-left .ddl-item.ddli-button::before {
+  background: url("../assets/button_icon1.png");
+}
+
+.dd-left .ddl-item.active.ddli-button::before,
+.dd-left .ddl-item:hover.ddli-button::before {
+  background: url("../assets/button_icon2.png");
+}
+
+.ddl-item .ddli-add {
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    display: none;
+    position: absolute;
+    background: url("../assets/add.png");
+}
+
+.ddl-item:hover .ddli-add {
+    display: block;
+}
+
+.dragdrop .dd-right {
+    top: 60px;
+    right: 0px;
+    left: 200px;
+    bottom: 0px;
+    padding: 10px;
+    position: absolute;
+}
+
+.dd-right .ddr-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ddr-box .ddrb-form {
+    width: 80%;
+    height: 100%;
+    border-right: solid 1px #eff0f2;
+}
+
+.ddrb-form .ddrbf-row {
+    width: 100%;
+    display: flex;
+    min-height: 40px;
+    flex-direction: row;
+}
+
+.ddrbf-row .ddrbfr-col {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    border: solid 1px #eff0f2;
+}
+
+.ddrbf-row .ddrbfr-col.active {
+    border: solid 1px #ffba2a;
+}
+
+.ddrbfr-col .ddrbfrc-btns {
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    display: none;
+    position: absolute;
+    flex-direction: row;
+}
+
+.ddrbfr-col:hover .ddrbfrc-btns {
+    display: flex;
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn.ddrbfrcb-left {
+  background: url("../assets/leftmove_icon.png");
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn.ddrbfrcb-right {
+  background: url("../assets/rightmove_icon.png");
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn.ddrbfrcb-up {
+  background: url("../assets/upmove_icon.png");
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn.ddrbfrcb-down {
+  background: url("../assets/downmove_icon.png");
+}
+
+.ddrbfrc-btns .ddrbfrcb-btn.ddrbfrcb-del {
+  background: url("../assets/delete_icon.png");
+}
+
+.ddr-box .ddrb-setting {
+    width: 18%;
+    height: 100%;
+    font-size: 12px;
+}
+
+.ddrb-setting .row .r-key {
+    width: 70px;
+    line-height: 30px;
+}
+
+.ddrb-setting input,
+.ddrb-setting textarea {
+    height: 30px;
+    font-size: 12px;
+}
+
+.ddrb-setting .switch {
+    width: 60px;
+    height: 30px;
+}
+
+.ddrb-setting .switch i {
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+}
+
+.ddrb-setting .switch i.s-off {
+    left: 30px;
+}
+
+.ddrb-setting .ddrbs-list-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ddrbs-list-box .sdlb-item {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.sdlb-item .sdlbi-input {
+    flex: 1;
+    height: 40px;
+}
+
+.sdlb-item .sdlbi-input input {
+    padding: 0 10px;
+}
+
+.sdlb-item .sdlbi-btn {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-left: 4px;
+    position: relative;
+    border-radius: 50%;
+    background: var(--blue);
+}
+
+.sdlb-item .sdlbi-btn::before {
+    top: 6px;
+    left: 2px;
+    width: 11px;
+    height: 3px;
+    content: "";
+    background: #fff;
+    position: absolute;
+}
+
+.sdlb-item .sdlbi-btn.del {
+    background: var(--red);
+}
+
+.sdlb-item .sdlbi-btn.add::after {
+    top: 2px;
+    left: 6px;
+    width: 3px;
+    height: 11px;
+    content: "";
+    background: #fff;
+    position: absolute;
+}
+
+.ddrb-setting .ddrbs-radio {
+    width: 100%;
+}
+
+.ddrbs-radio .ddrbsr-item {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 35px;
+    position: relative;
+}
+
+.ddrbs-radio .ddrbsr-item::before {
+    top: 6px;
+    left: 0px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.ddrbs-radio .ddrbsr-item.active::before,
+.ddrbs-radio .ddrbsr-item:hover::before {
+    border: 2px solid var(--blue);
+}
+
+.ddrbs-radio .ddrbsr-item.active::after {
+    top: 11px;
+    left: 5px;
+    content: "";
+    width: 9px;
+    height: 9px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--blue);
+}
+/* 拖拽组件样式------end */

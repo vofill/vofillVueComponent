@@ -113,6 +113,7 @@
                         this.selObj[this.selKey] = this.localList[currInd].Id;
                     } else if(this.localType == 2) {
                         this.selObj[this.selKey] = this.localList[currInd];
+                        this.$emit('change',this.selObj[this.selKey],this.localList[currInd]);
                     }
                 } else if(this.selVal) {
                     if(this.localType == 1 || this.localType == 3
@@ -121,8 +122,10 @@
                         || this.localType == 8 || this.localType == 9
                         || this.localType == 10 || this.localType == 11) {
                         this.selVal = this.localList[currInd].Id;
+                        this.$emit('change',this.selVal,this.localList[currInd].Id);
                     } else if(this.localType == 2) {
                         this.selVal = this.localList[currInd];
+                        this.$emit('change',this.selVal,this.localList[currInd]);
                     }
                 }
             }

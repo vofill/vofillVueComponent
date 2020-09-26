@@ -192,6 +192,14 @@
     background: url("../assets/report_2.png");
 }
 
+.hpl-menu .hplmi-row.icon-dragdrop:before {
+    background: url("../assets/dragdrop_1.png");
+}
+
+.hpl-menu .hplmi-row.icon-dragdrop.active:before {
+    background: url("../assets/dragdrop_2.png");
+}
+
 .home-page .hp-right {
     top: 80px;
     left: 240px;
@@ -224,9 +232,14 @@
     position: absolute;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     color: var(--input-color);
     border: var(--input-border);
     height: var(--input-height);
+}
+
+textarea {
+    min-height: 100px;
 }

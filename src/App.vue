@@ -60,7 +60,8 @@
                             {Id: 3, Name: "table组件", Url: "table", Class:"table"}, {Id: 4, Name: "滑块组件", Url: "slider", Class:"slider"},
                             {Id: 5, Name: "进度条组件", Url: "progressBar", Class:"progress"}, {Id: 6, Name: "左右选择组件", Url: "lrSelect", Class:"lrselect"},
                             {Id: 7, Name: "树状结构组件", Url: "tree", Class:"tree"}, {Id: 8, Name: "时间轴组件", Url: "timeaxis", Class:"timeaxis"},
-                            {Id: 9, Name: "图形报表组件", Url: "graphicReport", Class:"report"}],
+                            {Id: 9, Name: "图形报表组件", Url: "graphicReport", Class:"report"}, {Id: 10, Name: "拖拽组件", Url: "dragAndDrop", Class:"dragdrop"},
+                            {Id: 11, Name: "测试页面", Url: "test", Class:"test"}],
                 username: "测试人员"
             }
         },

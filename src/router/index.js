@@ -9,6 +9,8 @@ import lsSelect from '@/view/LRSelect'
 import tree from '@/view/TreeData'
 import timeaxis from '@/view/TimeAxis'
 import graphicReport from '@/view/GraphicReport'
+import dragDrop from '@/view/DragDrop'
+import test from '@/view/Test'
 
 Vue.use(Router)
 
@@ -61,6 +63,16 @@ export default new Router({
       path: '/graphicReport',
       name: 'GraphicReport',
       component: graphicReport
+    },
+    {
+      path: '/dragAndDrop',
+      name: 'DragDrop',
+      component: dragDrop
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: test
     }
   ]
 })

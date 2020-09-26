@@ -66,6 +66,11 @@
                     this.$emit('change',this.selVal,checked);
                 }
             }
+        },
+        wacth: {
+            list(nv) {
+                this.localList = nv;
+            }
         }
     }
 </script>

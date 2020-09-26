@@ -44,6 +44,11 @@
                 this.selObj[this.selKey] = id;
                 this.$emit('change',this.selObj[this.selKey],id);
             }
+        },
+        wacth: {
+            list(nv) {
+                this.localList = nv;
+            }
         }
     }
 </script>
